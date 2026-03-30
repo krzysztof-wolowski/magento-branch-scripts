@@ -1,0 +1,32 @@
+<?php
+
+declare(strict_types=1);
+
+use Magento\Framework\App\Bootstrap;
+
+require_once __DIR__ . '/../../app/bootstrap.php';
+require_once __DIR__ . '/../autoload.php';
+
+# Bootstrap the app.
+$bootstrap = Bootstrap::create(BP, $_SERVER);
+
+$obj = $bootstrap->getObjectManager();
+
+$areaCode = 'frontend';
+
+$state = $obj->get('Magento\Framework\App\State');
+$state->setAreaCode($areaCode);
+
+# Load the configuration for the area.
+///** @var \Magento\Framework\ObjectManager\ConfigLoaderInterface $configLoader */
+//$configLoader = $obj->get(\Magento\Framework\ObjectManager\ConfigLoaderInterface::class);
+//
+//$obj->configure($configLoader->load($areaCode));
+
+# Include translations
+///** @var \Magento\Framework\App\AreaList $areaList */
+//$areaList = $obj->get(\Magento\Framework\App\AreaList::class);
+//$areaList->getArea($areaCode)->load(\Magento\Framework\App\Area::PART_TRANSLATE);
+
+# Experiment with whatever you want.
+# Use \CommonTools\... for shared helpers and \ProjectTools\... for project-specific helpers.

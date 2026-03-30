@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# Creates a bootstrapped Magento script for the current git branch and opens it.
+
+PACKAGE_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MAGENTO_ROOT="$PWD"
+CONFIG_PATH="$PACKAGE_ROOT/config"
+
+if [ -f "$CONFIG_PATH" ]; then
+    . "$CONFIG_PATH"
+fi
+
+if [ "$PWD" != "$MAGENTO_ROOT" ]; then
+    echo "Run 'bootstrap' from the configured Magento root: $MAGENTO_ROOT" >&2
+    exit 1
+fi
+
+if [ ! -f "$MAGENTO_ROOT/app/bootstrap.php" ]; then
+    echo "Magento bootstrap not found in: $MAGENTO_ROOT" >&2
+    exit 1
+fi
+
+CUR_BRANCH=$(git branch --show-current)
+SCRIPT_DIR="$PACKAGE_ROOT/bin"
+FILE_PATH="$SCRIPT_DIR/$CUR_BRANCH.php"
+TEMPLATE_PATH="$PACKAGE_ROOT/script.php.example"
+
+mkdir -p "$(dirname "$FILE_PATH")"
+cp -n "$TEMPLATE_PATH" "$FILE_PATH"
+
+if [ -n "${EDITOR_COMMAND:-}" ]; then
+    "$EDITOR_COMMAND" "$FILE_PATH"
+fi

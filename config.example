@@ -1,0 +1,7 @@
+MAGENTO_ROOT="/absolute/path/to/your/magento-root"
+INSTALL_PATH="$HOME/.local/bin/bootstrap"
+EDITOR_COMMAND="phpstorm"
+COMMON_HELPER_NAMESPACE="CommonTools"
+COMMON_HELPER_SRC_DIR="src/CommonTools"
+PROJECT_HELPER_NAMESPACE="ProjectTools"
+PROJECT_HELPER_SRC_DIR="src/ProjectTools"
