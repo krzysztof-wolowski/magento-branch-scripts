@@ -54,3 +54,5 @@ PHP helpers are split into two configurable layers:
 
 - a shared helper namespace/directory
 - a project-specific helper namespace/directory
+
+Keeping these helper directories in `src/...` is a common convension.
