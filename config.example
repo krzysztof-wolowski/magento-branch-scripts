@@ -1,3 +1,4 @@
+# Example values only. Change these to match your preferred settings.
 MAGENTO_ROOT="/absolute/path/to/your/magento-root"
 INSTALL_PATH="$HOME/.local/bin/bootstrap"
 EDITOR_COMMAND="phpstorm"

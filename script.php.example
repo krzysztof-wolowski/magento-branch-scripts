@@ -29,4 +29,4 @@ $state->setAreaCode($areaCode);
 //$areaList->getArea($areaCode)->load(\Magento\Framework\App\Area::PART_TRANSLATE);
 
 # Experiment with whatever you want.
-# Use \CommonTools\... for shared helpers and \ProjectTools\... for project-specific helpers.
+# Use the helper namespaces configured in ./magento-branch-scripts/config.

@@ -24,6 +24,8 @@ Available settings:
 - `PROJECT_HELPER_NAMESPACE` controls the project-specific PHP helper namespace prefix used by `autoload.php`
 - `PROJECT_HELPER_SRC_DIR` controls the project-specific PHP helper source directory relative to the package root
 
+The values in `config.example` are defaults only. You can point both helper layers at any namespace and directory structure you want.
+
 ## Install
 
 After creating your local config, run:
@@ -48,7 +50,7 @@ This gives you:
 - a quick place for branch-specific code and experiments
 - optional editor opening through `EDITOR_COMMAND`
 
-PHP helpers are split into two layers:
+PHP helpers are split into two configurable layers:
 
-- `CommonTools\` for shared helpers
-- `ProjectTools\` for project-specific helpers
+- a shared helper namespace/directory
+- a project-specific helper namespace/directory
